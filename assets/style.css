@@ -1,0 +1,1257 @@
+/* =========================================
+   DASAR DASHBOARD GROUPTASK
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+.dashboard-body {
+    margin: 0;
+    background: #f5f6fc;
+    font-family: Arial, sans-serif;
+    color: #252b45;
+    overflow-x: clip;
+}
+
+.dashboard-layout {
+    display: flex;
+    min-height: 100vh;
+    align-items: stretch;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar {
+    width: 245px;
+    flex: 0 0 245px;
+    min-height: 100vh;
+    background: #ffffff;
+    padding: 30px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    border-right: 1px solid #eeeeF5;
+}
+
+.brand {
+    font-size: 25px;
+    margin: 0 0 45px;
+    color: #5145cd;
+}
+
+.brand span {
+    color: #ff9f43;
+}
+
+.sidebar-label {
+    color: #a0a3b5;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.sidebar-link {
+    display: block;
+    padding: 13px 15px;
+    margin-bottom: 8px;
+
+    color: #70758b;
+    text-decoration: none;
+    border-radius: 10px;
+
+    transition: 0.2s;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active {
+    background: #efedff;
+    color: #5145cd;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+.logout-link {
+    color: #e05252;
+}
+
+/* =========================================
+   KONTEN UTAMA
+========================================= */
+
+.dashboard-main {
+    flex: 1;
+    min-width: 0;
+    max-width: 1600px;
+    padding: 40px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+
+    padding: 5px 0 15px;
+    margin-bottom: 35px;
+}
+
+.eyebrow {
+    color: #7468df;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.dashboard-header h1 {
+    font-size: 30px;
+    margin: 10px 0;
+    color: #252b45;
+    letter-spacing: -0.7px;
+}
+
+.welcome-text,
+.section-heading p {
+    color: #9296a9;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.profile-avatar {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    border-radius: 50%;
+
+    background: #5145cd;
+    color: white;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 23px;
+    font-weight: bold;
+}
+
+/* =========================================
+   STATISTIK
+========================================= */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 17px;
+    padding: 23px;
+
+    border: 1px solid #f0eff8;
+    box-shadow: 0 5px 20px rgba(30, 30, 80, 0.04);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(30, 30, 80, 0.08);
+}
+
+.stat-card p {
+    color: #9296a9;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.stat-card h2 {
+    font-size: 30px;
+    margin-bottom: 0;
+    color: #5145cd;
+    font-weight: 700;
+}
+
+.stat-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 21px;
+}
+
+.purple {
+    background: #efedff;
+}
+
+.blue {
+    background: #e5f2ff;
+}
+
+.orange {
+    background: #fff1df;
+}
+
+/* =========================================
+   JUDUL BAGIAN
+========================================= */
+
+.group-section {
+    margin-bottom: 40px;
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.section-heading h2 {
+    margin-bottom: 5px;
+    color: #252b45;
+    font-size: 21px;
+}
+
+/* =========================================
+   KARTU KELOMPOK MURID
+========================================= */
+
+.group-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.group-card,
+.empty-state {
+    background: white;
+    border-radius: 17px;
+    padding: 25px;
+
+    border: 1px solid #f0eff8;
+    box-shadow: 0 5px 20px rgba(30, 30, 80, 0.04);
+}
+
+.group-card {
+    min-width: 0;
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.group-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(30, 30, 80, 0.09);
+}
+
+.group-icon {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 13px;
+    background: linear-gradient(135deg, #efedff, #e5e1ff);
+
+    color: #5145cd;
+    font-size: 23px;
+}
+
+.group-card h3 {
+    margin: 20px 0 8px;
+    color: #252b45;
+    font-size: 18px;
+    overflow-wrap: anywhere;
+}
+
+.group-card p {
+    color: #9296a9;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.detail-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    margin-top: 15px;
+
+    color: #5145cd;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+.detail-link:hover {
+    color: #ff9f43;
+    transform: translateX(3px);
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.empty-state {
+    text-align: center;
+    padding: 55px 20px;
+    border: 1px dashed #dcd9f5;
+}
+
+.empty-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.empty-state p {
+    color: #9296a9;
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   TOMBOL UTAMA
+========================================= */
+
+.primary-button {
+    display: inline-block;
+
+    background: #5145cd;
+    color: white;
+
+    padding: 13px 20px;
+
+    text-decoration: none;
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border: none;
+    cursor: pointer;
+
+    transition: background 0.2s ease,
+                transform 0.2s ease;
+}
+
+.primary-button:hover {
+    background: #4035b4;
+    transform: translateY(-2px);
+}
+
+/* =========================================
+   FORM KELOMPOK
+========================================= */
+
+.group-form-card {
+    background: white;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 35px;
+
+    border-radius: 18px;
+    box-shadow: 0 5px 25px rgba(30, 30, 80, 0.06);
+}
+
+.group-form-card h1 {
+    margin-top: 25px;
+    margin-bottom: 8px;
+}
+
+.group-form-card form {
+    margin-top: 30px;
+}
+
+.group-form-card label {
+    display: block;
+    margin-bottom: 10px;
+
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.group-form-card input {
+    width: 100%;
+    padding: 14px;
+
+    border: 1px solid #dedfee;
+    border-radius: 10px;
+
+    margin-bottom: 22px;
+    font-size: 14px;
+}
+
+.group-form-card input:focus {
+    outline: none;
+    border-color: #5145cd;
+}
+
+.form-error {
+    background: #fff0f0;
+    color: #c0392b;
+
+    padding: 12px;
+    border-radius: 9px;
+
+    font-size: 14px;
+}
+
+.form-notice {
+    padding: 13px;
+
+    background: #e9f9ef;
+    color: #21834b;
+
+    border-radius: 10px;
+    font-size: 14px;
+
+    margin: 20px 0;
+}
+
+.group-form-card hr {
+    border: none;
+    border-top: 1px solid #eeeeF5;
+    margin: 30px 0;
+}
+
+.group-form-card h2 {
+    font-size: 19px;
+    margin-top: 25px;
+}
+
+/* =========================================
+   DAFTAR ANGGOTA
+========================================= */
+
+.member-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.member-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    padding: 14px;
+
+    background: #f8f8fd;
+    border-radius: 12px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.member-avatar {
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #efedff;
+    color: #5145cd;
+
+    display: grid;
+    place-items: center;
+
+    font-weight: bold;
+}
+
+.member-name {
+    flex: 1;
+    min-width: 100px;
+}
+
+.member-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.member-actions form {
+    margin: 0;
+}
+
+.edit-button,
+.delete-button {
+    padding: 9px 13px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 12px;
+    text-decoration: none;
+
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.edit-button {
+    background: #efedff;
+    color: #5145cd;
+}
+
+.edit-button:hover {
+    background: #dedaff;
+}
+
+.delete-button {
+    background: #dc3545;
+    color: white;
+
+    padding: 8px 14px;
+    font-size: 14px;
+}
+
+.delete-button:hover {
+    background: #b02a37;
+}
+
+.jobdesk-actions form {
+    display: inline;
+}
+
+/* =========================================
+   DETAIL JOBDESK / PEMANTAUAN
+========================================= */
+
+.guru-jobdesk-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.jobdesk-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    background: white;
+    padding: 22px;
+
+    border-radius: 15px;
+    border: 1px solid #f0eff8;
+
+    box-shadow: 0 5px 20px rgba(30, 30, 80, 0.04);
+}
+
+.jobdesk-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.jobdesk-info h3 {
+    margin-top: 0;
+    color: #252b45;
+}
+
+.jobdesk-info p {
+    color: #777b91;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.jobdesk-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    color: #9296a9;
+    font-size: 13px;
+
+    margin-top: 15px;
+}
+
+.guru-status {
+    display: inline-block;
+
+    padding: 8px 12px;
+    border-radius: 8px;
+
+    font-size: 12px;
+    font-weight: bold;
+
+    white-space: nowrap;
+    height: fit-content;
+}
+
+.status-belum {
+    background: #fff1df;
+    color: #c27a19;
+}
+
+.status-proses {
+    background: #e5f2ff;
+    color: #2879bd;
+}
+
+.status-selesai {
+    background: #e9f9ef;
+    color: #21834b;
+}
+
+/* =========================================
+   DETAIL GURU
+========================================= */
+
+.teacher-detail-card {
+    max-width: 850px;
+}
+
+.teacher-detail-card .eyebrow {
+    margin-top: 35px;
+}
+
+.teacher-detail-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+
+    margin: 25px 0;
+}
+
+.teacher-detail-stats div {
+    padding: 18px;
+
+    background: #f8f8fd;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.teacher-detail-stats span {
+    color: #9296a9;
+    font-size: 13px;
+}
+
+.teacher-detail-stats strong {
+    font-size: 25px;
+    color: #5145cd;
+}
+
+.teacher-jobdesk-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.teacher-jobdesk-card {
+    background: #f8f8fd;
+    border: 1px solid #eeeeF5;
+
+    padding: 20px;
+    border-radius: 13px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.teacher-jobdesk-card h3 {
+    margin-top: 0;
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.teacher-jobdesk-card p {
+    color: #70758b;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.teacher-status {
+    display: inline-block;
+
+    background: #efedff;
+    color: #5145cd;
+
+    padding: 8px 11px;
+    border-radius: 8px;
+
+    font-size: 11px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.teacher-readonly-note {
+    background: #efedff;
+    color: #5145cd;
+
+    border-radius: 12px;
+    padding: 16px;
+
+    margin-top: 30px;
+
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   DASHBOARD GURU
+========================================= */
+
+/* SIDEBAR STICKY */
+
+.teacher-sidebar {
+    position: sticky;
+    top: 0;
+
+    align-self: flex-start;
+
+    flex: 0 0 245px;
+    width: 245px;
+    height: 100vh;
+    min-height: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    z-index: 100;
+}
+
+/* KONTEN GURU */
+
+.teacher-main {
+    flex: 1;
+    min-width: 0;
+    max-width: none;
+    padding: 40px;
+}
+
+/* STATISTIK GURU */
+
+.teacher-main .stats-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* =========================================
+   RINGKASAN PROGRES KESELURUHAN
+========================================= */
+
+.teacher-overview-section {
+    margin-bottom: 35px;
+}
+
+.guru-overview {
+    width: 100%;
+    max-width: 100%;
+
+    background: white;
+    border: 1px solid #f0eff8;
+
+    margin-bottom: 25px;
+    padding: 28px;
+
+    border-radius: 17px;
+    box-shadow: 0 5px 20px rgba(30, 30, 80, 0.04);
+}
+
+.guru-overview h2 {
+    font-size: 19px;
+    margin-top: 0;
+    color: #252b45;
+}
+
+.guru-overview-number {
+    font-size: 35px;
+    font-weight: bold;
+    color: #5145cd;
+    margin-top: 20px;
+}
+
+.guru-progress-track {
+    width: 100%;
+    height: 11px;
+
+    background: #efedff;
+    border-radius: 20px;
+    overflow: hidden;
+
+    margin: 12px 0;
+}
+
+.guru-progress-fill {
+    height: 100%;
+
+    background: linear-gradient(90deg, #5145cd, #887cf1);
+    border-radius: 20px;
+
+    transition: width 0.4s ease;
+}
+
+.guru-status-summary {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 20px;
+
+    margin-top: 18px;
+
+    font-size: 13px;
+    color: #777b91;
+}
+
+/* =========================================
+   KARTU KELOMPOK GURU
+========================================= */
+
+.teacher-main .group-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 22px;
+}
+
+.guru-group-card {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+    padding: 24px;
+
+    background: white;
+    border: 1px solid #f0eff8;
+    border-radius: 17px;
+
+    box-shadow: 0 5px 20px rgba(30, 30, 80, 0.04);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+.guru-group-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(30, 30, 80, 0.08);
+}
+
+.guru-group-card .group-icon {
+    flex-shrink: 0;
+    margin-bottom: 4px;
+}
+
+.guru-group-card h3 {
+    min-height: 44px;
+
+    margin: 14px 0 10px;
+
+    font-size: 18px;
+    line-height: 1.5;
+    color: #252b45;
+
+    overflow-wrap: anywhere;
+}
+
+/* INFORMASI ANGGOTA DAN JOBDESK */
+
+.guru-group-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px;
+
+    margin: 8px 0 15px;
+}
+
+.guru-group-info span {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    min-width: 0;
+    padding: 10px;
+
+    background: #f8f8fd;
+    border-radius: 9px;
+
+    color: #70758b;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* PROGRES KELOMPOK */
+
+.guru-group-progress {
+    margin-top: 12px;
+}
+
+.guru-progress-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+    color: #777b91;
+}
+
+.guru-progress-label strong {
+    color: #5145cd;
+    font-size: 14px;
+}
+
+.guru-group-card .guru-progress-track {
+    width: 100%;
+    height: 9px;
+
+    margin: 0;
+
+    background: #efedff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.guru-group-card .guru-progress-fill {
+    height: 100%;
+    border-radius: 20px;
+}
+
+/* STATUS JOBDESK */
+
+.guru-mini-status {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+
+    margin-top: 17px;
+}
+
+.guru-mini-status span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px 9px;
+
+    border-radius: 7px;
+
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.mini-belum {
+    background: #fff1df;
+    color: #c27a19;
+}
+
+.mini-proses {
+    background: #e5f2ff;
+    color: #2879bd;
+}
+
+.mini-selesai {
+    background: #e9f9ef;
+    color: #21834b;
+}
+
+/* TOMBOL DETAIL DI BAWAH KARTU */
+
+.guru-group-card .detail-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+
+    margin-top: auto;
+    padding-top: 22px;
+
+    color: #5145cd;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.guru-group-card .detail-link:hover {
+    color: #ff9f43;
+}
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .dashboard-main {
+        padding: 30px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .group-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .teacher-sidebar {
+        flex-basis: 220px;
+        width: 220px;
+    }
+
+    .teacher-main .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .teacher-main .group-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+/* =========================================
+   RESPONSIVE HP
+========================================= */
+
+@media (max-width: 600px) {
+
+    .dashboard-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        flex: none;
+
+        padding: 18px 15px;
+
+        border-right: none;
+        border-bottom: 1px solid #eeeeF5;
+    }
+
+    .brand {
+        font-size: 23px;
+        margin-bottom: 15px;
+    }
+
+    .sidebar-label,
+    .sidebar-bottom {
+        display: none;
+    }
+
+    .sidebar-link {
+        display: inline-block;
+
+        margin: 0 3px 0 0;
+        padding: 10px 8px;
+
+        font-size: 12px;
+    }
+
+    .dashboard-main {
+        width: 100%;
+        padding: 22px 16px;
+    }
+
+    .dashboard-header {
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 22px;
+        line-height: 1.4;
+    }
+
+    .welcome-text {
+        font-size: 13px;
+    }
+
+    .profile-avatar {
+        width: 43px;
+        height: 43px;
+        min-width: 43px;
+        font-size: 19px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 17px;
+        border-radius: 14px;
+    }
+
+    .stat-card h2 {
+        font-size: 25px;
+    }
+
+    .stat-card p {
+        font-size: 12px;
+    }
+
+    .stat-icon {
+        width: 39px;
+        height: 39px;
+        font-size: 19px;
+    }
+
+    .group-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .group-card {
+        padding: 20px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .section-heading h2 {
+        font-size: 19px;
+    }
+
+    .primary-button {
+        padding: 12px 16px;
+        font-size: 13px;
+    }
+
+    /* GURU */
+
+    .teacher-sidebar {
+        position: relative;
+        top: auto;
+
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        flex: none;
+
+        overflow: visible;
+    }
+
+    .teacher-main {
+        width: 100%;
+        padding: 22px 16px;
+    }
+
+    .teacher-main .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .teacher-main .group-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .guru-group-card {
+        padding: 20px;
+    }
+
+    .guru-group-card h3 {
+        min-height: auto;
+    }
+
+    .guru-group-info {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .guru-mini-status {
+        gap: 5px;
+    }
+
+    .guru-overview {
+        padding: 20px;
+    }
+
+    .guru-overview-number {
+        font-size: 29px;
+    }
+
+    .guru-status-summary {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .teacher-detail-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-jobdesk-card {
+        flex-direction: column;
+    }
+
+    .teacher-status {
+        white-space: normal;
+    }
+
+    .teacher-detail-card {
+        padding: 22px 17px;
+        margin: 15px auto;
+    }
+
+    .jobdesk-card {
+        padding: 17px;
+    }
+
+    .guru-status {
+        white-space: normal;
+    }
+
+    .group-form-card {
+        padding: 22px 17px;
+        margin: 15px auto;
+    }
+
+}
+
+/* =========================================
+   HP KECIL
+========================================= */
+
+@media (max-width: 360px) {
+
+    .dashboard-main {
+        padding: 18px 12px;
+    }
+
+    .sidebar-link {
+        font-size: 11px;
+        padding: 9px 6px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-main .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .guru-group-info {
+        grid-template-columns: 1fr;
+    }
+
+    .guru-mini-status {
+        gap: 5px;
+    }
+
+}
